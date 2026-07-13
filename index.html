@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Thule is a collection of official-guideline-based AI-agent skills for best practices, linting, security, and static analysis across Java, Scala, Go, TypeScript, Python, and Rust."
+    >
+    <title>Thule | Agent skills for code quality</title>
+    <link rel="stylesheet" href="docs/styles.css?v=2">
+  </head>
+  <body>
+    <header class="hero" id="top">
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="#top" aria-label="Thule home">Thule</a>
+        <div class="nav-links">
+          <a href="#story">Story</a>
+          <a href="#skill-navigation">Skills</a>
+          <a href="#images">Images</a>
+          <a href="#roadmap">Roadmap</a>
+        </div>
+      </nav>
+
+      <div class="hero-media" aria-hidden="true">
+        <img src="docs/assets/qaanaaq-greenland.jpg" alt="">
+      </div>
+      <div class="hero-shade" aria-hidden="true"></div>
+
+      <section class="hero-content" aria-labelledby="hero-title">
+        <p class="eyebrow">Official-guideline skills for AI coding agents</p>
+        <h1 id="hero-title">Thule</h1>
+        <p class="lede">
+          A practical atlas of agent skills for best practices, linting, secure coding, and static analysis across modern programming languages.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="#skill-navigation">Browse skills</a>
+          <a class="button secondary" href="#install">Install</a>
+        </div>
+      </section>
+
+      <aside class="banner" aria-label="Project coverage banner">
+        <div>
+          <span>96</span>
+          <strong>skill packages</strong>
+        </div>
+        <div>
+          <span>6</span>
+          <strong>languages</strong>
+        </div>
+        <div>
+          <span>4</span>
+          <strong>AI tools</strong>
+        </div>
+        <div>
+          <span>4</span>
+          <strong>quality tracks</strong>
+        </div>
+      </aside>
+
+      <p class="image-credit">
+        Hero photo: Qaanaaq, Greenland by Col. Lee-Volker Cox, U.S. Air Force. Public domain via
+        <a href="https://commons.wikimedia.org/wiki/File:Qaanaaq,_Greenland.jpg">Wikimedia Commons</a>.
+      </p>
+    </header>
+
+    <main>
+      <section class="section intro" id="story" aria-labelledby="story-title">
+        <div class="section-copy">
+          <p class="section-kicker">Why Thule</p>
+          <h2 id="story-title">A name from the edge of the known map.</h2>
+        </div>
+        <div class="text-stack">
+          <p>
+            In classical geography, Thule suggested the far northern boundary of the known world. This project uses that ancient-map meaning: a guidepost for AI agents moving through unfamiliar codebases, toolchains, and language conventions.
+          </p>
+          <p>
+            The site imagery comes from Qaanaaq, historically known as New Thule, and from the Pituffik region formerly associated with Thule Air Base. The visual language is cold, navigational, and practical because the project itself is a map for careful engineering work.
+          </p>
+        </div>
+      </section>
+
+      <section class="image-band" id="images" aria-labelledby="images-title">
+        <div class="image-band-heading">
+          <p class="section-kicker">Thule imagery</p>
+          <h2 id="images-title">Real places behind the metaphor.</h2>
+        </div>
+        <div class="image-grid">
+          <figure class="feature-image tall">
+            <img src="docs/assets/thule-air-base-aerial.jpg" alt="Aerial view of Thule Air Base with water, snow, and surrounding landforms.">
+            <figcaption>
+              <strong>Pituffik / Thule Air Base</strong>
+              <span>U.S. Air Force public-domain aerial image via Wikimedia Commons.</span>
+            </figcaption>
+          </figure>
+          <figure class="feature-image">
+            <img src="docs/assets/thule-aurora.jpg" alt="Aurora lights above Thule Air Base at night.">
+            <figcaption>
+              <strong>Aurora over Thule</strong>
+              <span>U.S. Air Force Space Command image, CC0/public domain via Wikimedia Commons.</span>
+            </figcaption>
+          </figure>
+          <figure class="feature-image">
+            <img src="docs/assets/qaanaaq-sentinel.jpg" alt="Satellite image of Qaanaaq, Greenland and surrounding ice and terrain.">
+            <figcaption>
+              <strong>Qaanaaq from orbit</strong>
+              <span>Contains modified Copernicus Sentinel data 2022 via Wikimedia Commons.</span>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="section install" id="install" aria-labelledby="install-title">
+        <div class="section-copy">
+          <p class="section-kicker">Install</p>
+          <h2 id="install-title">Pick only the agent skills a project needs.</h2>
+        </div>
+        <div class="terminal" role="img" aria-label="Install command examples">
+          <code>./install.sh</code>
+          <code>./install.sh --tool codex --lang go --scope personal</code>
+          <code>./install.sh --tool cursor --lang typescript --scope project --target /path/to/repo</code>
+        </div>
+      </section>
+
+      <section class="skills-section" id="skill-navigation" aria-labelledby="skills-title">
+        <div class="skills-heading">
+          <p class="section-kicker">Skill navigation</p>
+          <h2 id="skills-title">Every skill, linked by language and tool.</h2>
+          <p>
+            Each link opens the corresponding `SKILL.md` package in the repository. The four tracks repeat across Claude, Codex, Kiro, and Cursor so teams can install matching guidance for their preferred agent.
+          </p>
+        </div>
+
+        <div class="skill-grid">
+          <article class="skill-card">
+            <h3>Java</h3>
+            <p>Oracle-guided Java conventions, compiler diagnostics, secure coding, and JVM scanner workflows.</p>
+            <div class="skill-group">
+              <span>Best practices</span>
+              <a href="https://github.com/akg268/Thule/blob/main/java/claude/java-best-practices/SKILL.md">Claude</a>
+              <a href="https://github.com/akg268/Thule/blob/main/java/codex/java-best-practices/SKILL.md">Codex</a>
+              <a href="https://github.com/akg268/Thule/blob/main/java/kiro/java-best-practices/SKILL.md">Kiro</a>
+              <a href="https://github.com/akg268/Thule/blob/main/java/cursor/java-best-practices/SKILL.md">Cursor</a>
+            </div>
+            <div class="skill-group">
+              <span>Lint</span>
+              <a href="https://github.com/akg268/Thule/blob/main/java/claude/java-lint/SKILL.md">Claude</a>
+              <a href="https://github.com/akg268/Thule/blob/main/java/codex/java-lint/SKILL.md">Codex</a>
+              <a href="https://github.com/akg268/Thule/blob/main/java/kiro/java-lint/SKILL.md">Kiro</a>
+              <a href="https://github.com/akg268/Thule/blob/main/java/cursor/java-lint/SKILL.md">Cursor</a>
+            </div>
+            <div class="skill-group">
+              <span>Security</span>
+              <a href="https://github.com/akg268/Thule/blob/main/java/claude/java-security/SKILL.md">Claude</a>
+              <a href="https://github.com/akg268/Thule/blob/main/java/codex/java-security/SKILL.md">Codex</a>
+              <a href="https://github.com/akg268/Thule/blob/main/java/kiro/java-security/SKILL.md">Kiro</a>
+              <a href="https://github.com/akg268/Thule/blob/main/java/cursor/java-security/SKILL.md">Cursor</a>
+            </div>
+            <div class="skill-group">
+              <span>Static scan</span>
+              <a href="https://github.com/akg268/Thule/blob/main/java/claude/java-static-scan/SKILL.md">Claude</a>
+              <a href="https://github.com/akg268/Thule/blob/main/java/codex/java-static-scan/SKILL.md">Codex</a>
+              <a href="https://github.com/akg268/Thule/blob/main/java/kiro/java-static-scan/SKILL.md">Kiro</a>
+              <a href="https://github.com/akg268/Thule/blob/main/java/cursor/java-static-scan/SKILL.md">Cursor</a>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <h3>Scala</h3>
+            <p>Scala style, scalafmt, scalafix, compiler warning discipline, and JVM dependency scanning.</p>
+            <div class="skill-group">
+              <span>Best practices</span>
+              <a href="https://github.com/akg268/Thule/blob/main/scala/claude/scala-best-practices/SKILL.md">Claude</a>
+              <a href="https://github.com/akg268/Thule/blob/main/scala/codex/scala-best-practices/SKILL.md">Codex</a>
+              <a href="https://github.com/akg268/Thule/blob/main/scala/kiro/scala-best-practices/SKILL.md">Kiro</a>
+              <a href="https://github.com/akg268/Thule/blob/main/scala/cursor/scala-best-practices/SKILL.md">Cursor</a>
+            </div>
+            <div class="skill-group">
+              <span>Lint</span>
+              <a href="https://github.com/akg268/Thule/blob/main/scala/claude/scala-lint/SKILL.md">Claude</a>
+              <a href="https://github.com/akg268/Thule/blob/main/scala/codex/scala-lint/SKILL.md">Codex</a>
+              <a href="https://github.com/akg268/Thule/blob/main/scala/kiro/scala-lint/SKILL.md">Kiro</a>
+              <a href="https://github.com/akg268/Thule/blob/main/scala/cursor/scala-lint/SKILL.md">Cursor</a>
+            </div>
+            <div class="skill-group">
+              <span>Security</span>
+              <a href="https://github.com/akg268/Thule/blob/main/scala/claude/scala-security/SKILL.md">Claude</a>
+              <a href="https://github.com/akg268/Thule/blob/main/scala/codex/scala-security/SKILL.md">Codex</a>
+              <a href="https://github.com/akg268/Thule/blob/main/scala/kiro/scala-security/SKILL.md">Kiro</a>
+              <a href="https://github.com/akg268/Thule/blob/main/scala/cursor/scala-security/SKILL.md">Cursor</a>
+            </div>
+            <div class="skill-group">
+              <span>Static scan</span>
+              <a href="https://github.com/akg268/Thule/blob/main/scala/claude/scala-static-scan/SKILL.md">Claude</a>
+              <a href="https://github.com/akg268/Thule/blob/main/scala/codex/scala-static-scan/SKILL.md">Codex</a>
+              <a href="https://github.com/akg268/Thule/blob/main/scala/kiro/scala-static-scan/SKILL.md">Kiro</a>
+              <a href="https://github.com/akg268/Thule/blob/main/scala/cursor/scala-static-scan/SKILL.md">Cursor</a>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <h3>Go</h3>
+            <p>Effective Go, gofmt, go vet, testing, govulncheck, and module-aware security scanning.</p>
+            <div class="skill-group">
+              <span>Best practices</span>
+              <a href="https://github.com/akg268/Thule/blob/main/go/claude/go-best-practices/SKILL.md">Claude</a>
+              <a href="https://github.com/akg268/Thule/blob/main/go/codex/go-best-practices/SKILL.md">Codex</a>
+              <a href="https://github.com/akg268/Thule/blob/main/go/kiro/go-best-practices/SKILL.md">Kiro</a>
+              <a href="https://github.com/akg268/Thule/blob/main/go/cursor/go-best-practices/SKILL.md">Cursor</a>
+            </div>
+            <div class="skill-group">
+              <span>Lint</span>
+              <a href="https://github.com/akg268/Thule/blob/main/go/claude/go-lint/SKILL.md">Claude</a>
+              <a href="https://github.com/akg268/Thule/blob/main/go/codex/go-lint/SKILL.md">Codex</a>
+              <a href="https://github.com/akg268/Thule/blob/main/go/kiro/go-lint/SKILL.md">Kiro</a>
+              <a href="https://github.com/akg268/Thule/blob/main/go/cursor/go-lint/SKILL.md">Cursor</a>
+            </div>
+            <div class="skill-group">
+              <span>Security</span>
+              <a href="https://github.com/akg268/Thule/blob/main/go/claude/go-security/SKILL.md">Claude</a>
+              <a href="https://github.com/akg268/Thule/blob/main/go/codex/go-security/SKILL.md">Codex</a>
+              <a href="https://github.com/akg268/Thule/blob/main/go/kiro/go-security/SKILL.md">Kiro</a>
+              <a href="https://github.com/akg268/Thule/blob/main/go/cursor/go-security/SKILL.md">Cursor</a>
+            </div>
+            <div class="skill-group">
+              <span>Static scan</span>
+              <a href="https://github.com/akg268/Thule/blob/main/go/claude/go-static-scan/SKILL.md">Claude</a>
+              <a href="https://github.com/akg268/Thule/blob/main/go/codex/go-static-scan/SKILL.md">Codex</a>
+              <a href="https://github.com/akg268/Thule/blob/main/go/kiro/go-static-scan/SKILL.md">Kiro</a>
+              <a href="https://github.com/akg268/Thule/blob/main/go/cursor/go-static-scan/SKILL.md">Cursor</a>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <h3>TypeScript</h3>
+            <p>Strict typing, type-aware linting, package audits, runtime validation, and lockfile review.</p>
+            <div class="skill-group">
+              <span>Best practices</span>
+              <a href="https://github.com/akg268/Thule/blob/main/typescript/claude/typescript-best-practices/SKILL.md">Claude</a>
+              <a href="https://github.com/akg268/Thule/blob/main/typescript/codex/typescript-best-practices/SKILL.md">Codex</a>
+              <a href="https://github.com/akg268/Thule/blob/main/typescript/kiro/typescript-best-practices/SKILL.md">Kiro</a>
+              <a href="https://github.com/akg268/Thule/blob/main/typescript/cursor/typescript-best-practices/SKILL.md">Cursor</a>
+            </div>
+            <div class="skill-group">
+              <span>Lint</span>
+              <a href="https://github.com/akg268/Thule/blob/main/typescript/claude/typescript-lint/SKILL.md">Claude</a>
+              <a href="https://github.com/akg268/Thule/blob/main/typescript/codex/typescript-lint/SKILL.md">Codex</a>
+              <a href="https://github.com/akg268/Thule/blob/main/typescript/kiro/typescript-lint/SKILL.md">Kiro</a>
+              <a href="https://github.com/akg268/Thule/blob/main/typescript/cursor/typescript-lint/SKILL.md">Cursor</a>
+            </div>
+            <div class="skill-group">
+              <span>Security</span>
+              <a href="https://github.com/akg268/Thule/blob/main/typescript/claude/typescript-security/SKILL.md">Claude</a>
+              <a href="https://github.com/akg268/Thule/blob/main/typescript/codex/typescript-security/SKILL.md">Codex</a>
+              <a href="https://github.com/akg268/Thule/blob/main/typescript/kiro/typescript-security/SKILL.md">Kiro</a>
+              <a href="https://github.com/akg268/Thule/blob/main/typescript/cursor/typescript-security/SKILL.md">Cursor</a>
+            </div>
+            <div class="skill-group">
+              <span>Static scan</span>
+              <a href="https://github.com/akg268/Thule/blob/main/typescript/claude/typescript-static-scan/SKILL.md">Claude</a>
+              <a href="https://github.com/akg268/Thule/blob/main/typescript/codex/typescript-static-scan/SKILL.md">Codex</a>
+              <a href="https://github.com/akg268/Thule/blob/main/typescript/kiro/typescript-static-scan/SKILL.md">Kiro</a>
+              <a href="https://github.com/akg268/Thule/blob/main/typescript/cursor/typescript-static-scan/SKILL.md">Cursor</a>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <h3>Python</h3>
+            <p>PEP 8, Ruff, Bandit, pip-audit, compile checks, and security-sensitive standard-library usage.</p>
+            <div class="skill-group">
+              <span>Best practices</span>
+              <a href="https://github.com/akg268/Thule/blob/main/python/claude/python-best-practices/SKILL.md">Claude</a>
+              <a href="https://github.com/akg268/Thule/blob/main/python/codex/python-best-practices/SKILL.md">Codex</a>
+              <a href="https://github.com/akg268/Thule/blob/main/python/kiro/python-best-practices/SKILL.md">Kiro</a>
+              <a href="https://github.com/akg268/Thule/blob/main/python/cursor/python-best-practices/SKILL.md">Cursor</a>
+            </div>
+            <div class="skill-group">
+              <span>Lint</span>
+              <a href="https://github.com/akg268/Thule/blob/main/python/claude/python-lint/SKILL.md">Claude</a>
+              <a href="https://github.com/akg268/Thule/blob/main/python/codex/python-lint/SKILL.md">Codex</a>
+              <a href="https://github.com/akg268/Thule/blob/main/python/kiro/python-lint/SKILL.md">Kiro</a>
+              <a href="https://github.com/akg268/Thule/blob/main/python/cursor/python-lint/SKILL.md">Cursor</a>
+            </div>
+            <div class="skill-group">
+              <span>Security</span>
+              <a href="https://github.com/akg268/Thule/blob/main/python/claude/python-security/SKILL.md">Claude</a>
+              <a href="https://github.com/akg268/Thule/blob/main/python/codex/python-security/SKILL.md">Codex</a>
+              <a href="https://github.com/akg268/Thule/blob/main/python/kiro/python-security/SKILL.md">Kiro</a>
+              <a href="https://github.com/akg268/Thule/blob/main/python/cursor/python-security/SKILL.md">Cursor</a>
+            </div>
+            <div class="skill-group">
+              <span>Static scan</span>
+              <a href="https://github.com/akg268/Thule/blob/main/python/claude/python-static-scan/SKILL.md">Claude</a>
+              <a href="https://github.com/akg268/Thule/blob/main/python/codex/python-static-scan/SKILL.md">Codex</a>
+              <a href="https://github.com/akg268/Thule/blob/main/python/kiro/python-static-scan/SKILL.md">Kiro</a>
+              <a href="https://github.com/akg268/Thule/blob/main/python/cursor/python-static-scan/SKILL.md">Cursor</a>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <h3>Rust</h3>
+            <p>Rust API Guidelines, rustfmt, Clippy, cargo check, cargo audit, and `unsafe` review discipline.</p>
+            <div class="skill-group">
+              <span>Best practices</span>
+              <a href="https://github.com/akg268/Thule/blob/main/rust/claude/rust-best-practices/SKILL.md">Claude</a>
+              <a href="https://github.com/akg268/Thule/blob/main/rust/codex/rust-best-practices/SKILL.md">Codex</a>
+              <a href="https://github.com/akg268/Thule/blob/main/rust/kiro/rust-best-practices/SKILL.md">Kiro</a>
+              <a href="https://github.com/akg268/Thule/blob/main/rust/cursor/rust-best-practices/SKILL.md">Cursor</a>
+            </div>
+            <div class="skill-group">
+              <span>Lint</span>
+              <a href="https://github.com/akg268/Thule/blob/main/rust/claude/rust-lint/SKILL.md">Claude</a>
+              <a href="https://github.com/akg268/Thule/blob/main/rust/codex/rust-lint/SKILL.md">Codex</a>
+              <a href="https://github.com/akg268/Thule/blob/main/rust/kiro/rust-lint/SKILL.md">Kiro</a>
+              <a href="https://github.com/akg268/Thule/blob/main/rust/cursor/rust-lint/SKILL.md">Cursor</a>
+            </div>
+            <div class="skill-group">
+              <span>Security</span>
+              <a href="https://github.com/akg268/Thule/blob/main/rust/claude/rust-security/SKILL.md">Claude</a>
+              <a href="https://github.com/akg268/Thule/blob/main/rust/codex/rust-security/SKILL.md">Codex</a>
+              <a href="https://github.com/akg268/Thule/blob/main/rust/kiro/rust-security/SKILL.md">Kiro</a>
+              <a href="https://github.com/akg268/Thule/blob/main/rust/cursor/rust-security/SKILL.md">Cursor</a>
+            </div>
+            <div class="skill-group">
+              <span>Static scan</span>
+              <a href="https://github.com/akg268/Thule/blob/main/rust/claude/rust-static-scan/SKILL.md">Claude</a>
+              <a href="https://github.com/akg268/Thule/blob/main/rust/codex/rust-static-scan/SKILL.md">Codex</a>
+              <a href="https://github.com/akg268/Thule/blob/main/rust/kiro/rust-static-scan/SKILL.md">Kiro</a>
+              <a href="https://github.com/akg268/Thule/blob/main/rust/cursor/rust-static-scan/SKILL.md">Cursor</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section roadmap" id="roadmap" aria-labelledby="roadmap-title">
+        <div class="section-copy">
+          <p class="section-kicker">Future roadmap</p>
+          <h2 id="roadmap-title">Make the map richer without making it heavier.</h2>
+        </div>
+        <ol class="roadmap-list">
+          <li>
+            <span>Expand language coverage</span>
+            <p>Add Kotlin, C#, C/C++, Ruby, PHP, and Swift with the same official-docs-first standard.</p>
+          </li>
+          <li>
+            <span>Add framework packs</span>
+            <p>Create optional skills for Spring, Akka, React, Next.js, FastAPI, Django, Axum, and Tokio.</p>
+          </li>
+          <li>
+            <span>Strengthen scanner workflows</span>
+            <p>Add references for Semgrep, CodeQL, Trivy, osv-scanner, cargo-deny, and ecosystem-native audit tools.</p>
+          </li>
+          <li>
+            <span>Improve installer ergonomics</span>
+            <p>Add update, uninstall, diff, and version pinning commands for repeatable team installs.</p>
+          </li>
+          <li>
+            <span>Publish examples</span>
+            <p>Show before-and-after agent runs so teams can see how each skill changes behavior in real repositories.</p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="credits" aria-labelledby="credits-title">
+        <h2 id="credits-title">Image credits</h2>
+        <ul>
+          <li><a href="https://commons.wikimedia.org/wiki/File:Qaanaaq,_Greenland.jpg">Qaanaaq, Greenland</a>: Col. Lee-Volker Cox, U.S. Air Force, public domain.</li>
+          <li><a href="https://commons.wikimedia.org/wiki/File:Aerial_Picture_Of_Thule_Air_Base.jpg">Aerial Picture Of Thule Air Base</a>: U.S. Air Force, public domain.</li>
+          <li><a href="https://commons.wikimedia.org/wiki/File:Thule_AB,_Greenland_(39033264061).jpg">Thule AB, Greenland</a>: U.S. Air Force Space Command, CC0/public domain.</li>
+          <li><a href="https://commons.wikimedia.org/wiki/File:QaanaaqGreenland_(cropped).jpg">QaanaaqGreenland cropped</a>: contains modified Copernicus Sentinel data 2022.</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Thule is built for programmers using AI agents to work carefully across many languages.</p>
+      <a href="#top">Back to top</a>
+    </footer>
+  </body>
+</html>
