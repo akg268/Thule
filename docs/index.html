@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Thule is a collection of official-guideline-based AI-agent skills for programming language quality, linting, security, and static analysis workflows."
+    >
+    <title>Thule | Agent skills for code quality</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="hero">
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="#top" aria-label="Thule home">Thule</a>
+        <div class="nav-links">
+          <a href="#skills">Skills</a>
+          <a href="#name">Name</a>
+          <a href="#install">Install</a>
+          <a href="#roadmap">Roadmap</a>
+        </div>
+      </nav>
+
+      <div class="hero-media" id="top" aria-hidden="true">
+        <img src="assets/qaanaaq-greenland.jpg" alt="">
+      </div>
+      <div class="hero-shade" aria-hidden="true"></div>
+
+      <section class="hero-content" aria-labelledby="hero-title">
+        <p class="eyebrow">Agent skills for polyglot codebases</p>
+        <h1 id="hero-title">Thule</h1>
+        <p class="lede">
+          A curated repository of AI-agent skills that help coding tools follow official language guidance for best practices, linting, security, and static scanning.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="#skills">Explore skills</a>
+          <a class="button secondary" href="#install">Install skills</a>
+        </div>
+      </section>
+
+      <p class="image-credit">
+        Photo: Qaanaaq, Greenland by Col. Lee-Volker Cox, U.S. Air Force.
+        Public domain via
+        <a href="https://commons.wikimedia.org/wiki/File:Qaanaaq,_Greenland.jpg">Wikimedia Commons</a>.
+      </p>
+    </header>
+
+    <main>
+      <section class="section intro" aria-labelledby="intro-title">
+        <div class="section-copy">
+          <p class="section-kicker">What it is</p>
+          <h2 id="intro-title">A map for agents working across languages and tools.</h2>
+        </div>
+        <p>
+          Thule gives AI coding agents a compact, tool-native set of instructions for real engineering work. Each skill tells the agent how to detect project conventions, prefer existing scripts, run appropriate checks, and report risks clearly.
+        </p>
+      </section>
+
+      <section class="section stats" aria-label="Project coverage">
+        <article class="stat">
+          <strong>6</strong>
+          <span>languages</span>
+        </article>
+        <article class="stat">
+          <strong>4</strong>
+          <span>AI tools</span>
+        </article>
+        <article class="stat">
+          <strong>96</strong>
+          <span>skill packages</span>
+        </article>
+        <article class="stat">
+          <strong>4</strong>
+          <span>quality tracks</span>
+        </article>
+      </section>
+
+      <section class="section matrix" id="skills" aria-labelledby="skills-title">
+        <div class="section-copy">
+          <p class="section-kicker">Coverage</p>
+          <h2 id="skills-title">Built for the tools developers already use.</h2>
+          <p>
+            Skills are organized by programming language and AI tool, using the official Agent Skills package shape where each tool supports it.
+          </p>
+        </div>
+
+        <div class="matrix-grid" aria-label="Skill coverage matrix">
+          <div>
+            <h3>Languages</h3>
+            <ul>
+              <li>Java</li>
+              <li>Scala</li>
+              <li>Go</li>
+              <li>TypeScript</li>
+              <li>Python</li>
+              <li>Rust</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Tools</h3>
+            <ul>
+              <li>Claude</li>
+              <li>Codex</li>
+              <li>Kiro</li>
+              <li>Cursor</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Skill tracks</h3>
+            <ul>
+              <li>Best practices</li>
+              <li>Lint and formatting</li>
+              <li>Secure coding</li>
+              <li>Static analysis</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section name-story" id="name" aria-labelledby="name-title">
+        <div class="section-copy">
+          <p class="section-kicker">Why the name</p>
+          <h2 id="name-title">Thule points to the edge of the known map.</h2>
+        </div>
+        <div class="name-body">
+          <p>
+            In classical geography, Thule evoked the far northern boundary of the known world. For this project, the name is used in that ancient-map sense: a guidepost for agents navigating the edge between human engineering judgment and automated coding assistance.
+          </p>
+          <p>
+            The image comes from Qaanaaq, Greenland, historically called New Thule. It anchors the metaphor in a real place while keeping the project focused on practical developer guidance.
+          </p>
+        </div>
+      </section>
+
+      <section class="section install" id="install" aria-labelledby="install-title">
+        <div class="section-copy">
+          <p class="section-kicker">Install</p>
+          <h2 id="install-title">Choose a tool, choose a language, install only what you need.</h2>
+        </div>
+        <div class="terminal" role="img" aria-label="Install command examples">
+          <code>./install.sh</code>
+          <code>./install.sh --tool codex --lang go --scope personal</code>
+          <code>./install.sh --tool cursor --lang typescript --scope project --target /path/to/repo</code>
+        </div>
+      </section>
+
+      <section class="section roadmap" id="roadmap" aria-labelledby="roadmap-title">
+        <div class="section-copy">
+          <p class="section-kicker">Future roadmap</p>
+          <h2 id="roadmap-title">Next, make the map richer without making it heavier.</h2>
+        </div>
+        <ol class="roadmap-list">
+          <li>
+            <span>Expand language coverage</span>
+            <p>Add Kotlin, C#, C/C++, Ruby, PHP, and Swift with the same official-docs-first standard.</p>
+          </li>
+          <li>
+            <span>Add framework-specific packs</span>
+            <p>Create optional skills for Spring, Akka, React, Next.js, FastAPI, Django, Axum, and Tokio.</p>
+          </li>
+          <li>
+            <span>Strengthen scanner workflows</span>
+            <p>Add references for Semgrep, CodeQL, Trivy, osv-scanner, cargo-deny, and ecosystem-native audit tools.</p>
+          </li>
+          <li>
+            <span>Improve installer ergonomics</span>
+            <p>Add update, uninstall, diff, and version pinning commands for repeatable team installs.</p>
+          </li>
+          <li>
+            <span>Publish examples</span>
+            <p>Show before-and-after agent runs so teams can see how each skill changes behavior in real repositories.</p>
+          </li>
+        </ol>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Thule is built for programmers using AI agents to work carefully across many languages.</p>
+      <a href="#top">Back to top</a>
+    </footer>
+  </body>
+</html>

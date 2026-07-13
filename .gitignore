@@ -1,0 +1,48 @@
+# Local agent memory and workspace state
+AGENTS.md
+CLAUDE.md
+MEMORY.md
+PROJECT_MEMORY.md
+.agents/
+.codex/
+.cursor/memory*
+.kiro/memory*
+
+# Local environment files
+.env
+.env.*
+!.env.example
+
+# Python caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# JavaScript and TypeScript dependencies/build outputs
+node_modules/
+dist/
+build/
+.turbo/
+.next/
+coverage/
+
+# Java, Scala, and JVM build outputs
+target/
+out/
+.gradle/
+.bsp/
+.metals/
+.scala-build/
+
+# Go and Rust build outputs
+bin/
+Cargo.lock.tmp
+
+# macOS and editor noise
+.DS_Store
+*.swp
+*.swo
+.idea/
+.vscode/
