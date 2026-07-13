@@ -54,6 +54,20 @@ LANGUAGES = {
             "Run OWASP Dependency-Check for Maven, Gradle, CLI, or CI dependency vulnerability scanning when configured.",
             "Report tool versions, command exits, and any warnings left unresolved.",
         ],
+        "thread_dump": [
+            "Prefer `jcmd <pid> Thread.print -l` for live JVM thread snapshots; use `jstack -l <pid>` only when it is the available project or runtime tool.",
+            "Capture at least three dumps across short intervals before identifying a hang, starvation pattern, or transient blocker.",
+            "Preserve timestamps, JVM version, process ID, host/container context, CPU state, and the command used to collect each dump.",
+            "Group threads by state, stack shape, pool name, lock owner, monitor, parking point, and repeated top frames.",
+            "Separate evidence for deadlock, lock contention, thread pool starvation, blocked I/O, GC pressure, and normal idle waiting.",
+        ],
+        "jvm_memory": [
+            "Classify the symptom first: Java heap growth, allocation churn, GC pause pressure, metaspace, direct buffer, thread stack, code cache, or native memory.",
+            "Start with lower-impact observations such as `jcmd <pid> GC.heap_info`, `jcmd <pid> GC.class_histogram`, `jstat -gcutil`, and existing metrics.",
+            "Use `jcmd <pid> GC.heap_dump <file>` or `jmap -dump` only after noting heap-dump impact and data sensitivity.",
+            "Use Native Memory Tracking data such as `jcmd <pid> VM.native_memory summary` only when NMT is enabled for the target JVM.",
+            "Correlate heap histograms, GC logs, JFR events, and code paths before naming a leak or recommending tuning.",
+        ],
     },
     "scala": {
         "display": "Scala",
@@ -92,6 +106,20 @@ LANGUAGES = {
             "Run the repo's compiler check with warnings enabled, usually through `sbt Test/compile`, `sbt test`, `mill __.test`, or existing CI scripts.",
             "Run OWASP Dependency-Check through Maven, Gradle, CLI, or configured CI for dependency vulnerabilities.",
             "Summarize findings by source file, rule, severity, and whether a fix was applied.",
+        ],
+        "thread_dump": [
+            "Prefer `jcmd <pid> Thread.print -l` for live JVM thread snapshots; use `jstack -l <pid>` only when it is the available project or runtime tool.",
+            "Capture multiple dumps across intervals and compare repeated stacks before concluding a Scala service is hung.",
+            "Separate normal `ExecutionContext`, `ForkJoinPool`, scheduler, and dispatcher idleness from starvation, blocking, or lock contention.",
+            "Look for `Await.result`, unmanaged blocking, long-running work on shared execution contexts, and missing `blocking` hints around unavoidable blocking.",
+            "Tie thread names and pools back to the Scala runtime, build tool, framework, or application configuration before recommending code or pool changes.",
+        ],
+        "jvm_memory": [
+            "Classify JVM memory symptoms before selecting tools: heap retention, allocation churn, GC pressure, metaspace, direct buffers, thread stacks, or native memory.",
+            "Start with low-impact JDK observations such as `jcmd <pid> GC.heap_info`, `jcmd <pid> GC.class_histogram`, `jstat -gcutil`, and existing metrics.",
+            "Treat heap dumps as sensitive and potentially disruptive; collect them only with an explicit reason and enough context to interpret them.",
+            "Inspect Scala-specific retention patterns such as captured closures, long-lived `Future` or `Promise` chains, cached collections, lazy vals, and effect runtimes.",
+            "Correlate heap histograms, GC behavior, JFR events, and code ownership before calling a retention path a leak.",
         ],
     },
     "go": {
@@ -275,6 +303,44 @@ CATEGORIES = {
         "focus": "Run static analyzers, type checkers, vulnerability scanners, and compiler diagnostics appropriate to the repository.",
         "key": "scan",
     },
+    "thread-dump-analysis": {
+        "title": "Thread Dump Analysis",
+        "summary": "JVM thread dump capture and analysis guidance",
+        "focus": "Capture and interpret JVM thread dumps for hangs, deadlocks, starvation, contention, blocked I/O, and thread pool behavior.",
+        "key": "thread_dump",
+        "doc_kind": "diagnostic",
+        "use_context": "diagnosing JVM thread behavior for",
+        "languages": ("java", "scala"),
+        "source_mode": "category",
+        "sources": [
+            ("Oracle jcmd command", "https://docs.oracle.com/en/java/javase/26/docs/specs/man/jcmd.html"),
+            ("Oracle jstack command", "https://docs.oracle.com/en/java/javase/26/docs/specs/man/jstack.html"),
+            ("Oracle Diagnostic Tools", "https://docs.oracle.com/en/java/javase/26/troubleshoot/diagnostic-tools.html"),
+        ],
+        "sources_by_language": {
+            "scala": [("Scala Futures and Promises", "https://docs.scala-lang.org/overviews/core/futures.html")],
+        },
+    },
+    "jvm-memory-analysis": {
+        "title": "JVM Memory Analysis",
+        "summary": "JVM heap, GC, native memory, and leak analysis guidance",
+        "focus": "Analyze JVM memory symptoms with heap, GC, class histogram, native memory, JFR, and leak investigation workflows.",
+        "key": "jvm_memory",
+        "doc_kind": "diagnostic",
+        "use_context": "diagnosing JVM memory behavior for",
+        "languages": ("java", "scala"),
+        "source_mode": "category",
+        "sources": [
+            ("Oracle jcmd command", "https://docs.oracle.com/en/java/javase/26/docs/specs/man/jcmd.html"),
+            ("Oracle jmap command", "https://docs.oracle.com/en/java/javase/26/docs/specs/man/jmap.html"),
+            ("Oracle jstat command", "https://docs.oracle.com/en/java/javase/26/docs/specs/man/jstat.html"),
+            ("Oracle jfr command", "https://docs.oracle.com/en/java/javase/26/docs/specs/man/jfr.html"),
+            ("Oracle Diagnostic Tools", "https://docs.oracle.com/en/java/javase/26/troubleshoot/diagnostic-tools.html"),
+        ],
+        "sources_by_language": {
+            "scala": [("Scala Futures and Promises", "https://docs.scala-lang.org/overviews/core/futures.html")],
+        },
+    },
 }
 
 
@@ -298,14 +364,19 @@ Tools:
 - Kiro
 - Cursor
 
-Each language/tool pair contains four Agent Skill packages:
+Every language/tool pair contains four core Agent Skill packages:
 
 - `<language>-best-practices`
 - `<language>-lint`
 - `<language>-security`
 - `<language>-static-scan`
 
-The skill content is intentionally grounded in official language, tool, and security-tool documentation. The skills do not install linters or scanners for a project; they tell the AI agent how to use the official or already-configured tools for that project.
+Java and Scala tool folders also include JVM diagnostic skills:
+
+- `<language>-thread-dump-analysis`
+- `<language>-jvm-memory-analysis`
+
+The skill content is intentionally grounded in official language, tool, security, and diagnostics documentation. The skills do not install linters, scanners, or JVM diagnostic tools for a project; they tell the AI agent how to use the official or already-configured tools for that project.
 
 ## Install
 
@@ -325,7 +396,7 @@ Direct:
 
 Useful flags:
 
-- `--list`: show supported tools and languages
+- `--list`: show supported tools, languages, and skill categories
 - `--dry-run`: show what would be copied
 - `--force`: replace an existing installed skill directory
 
@@ -362,7 +433,7 @@ ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 TOOLS=(claude codex kiro cursor)
 LANGS=(java scala go typescript python rust)
-CATEGORIES=(best-practices lint security static-scan)
+CATEGORIES=(best-practices lint security static-scan thread-dump-analysis jvm-memory-analysis)
 
 tool=""
 lang=""
@@ -574,14 +645,63 @@ def source_list(items: list[tuple[str, str]]) -> str:
     return "\n".join(f"- [{name}]({url})" for name, url in items)
 
 
+QUALITY_WORKFLOW = [
+    "Detect the build tool, package manager, language version, and existing quality commands before changing code.",
+    "Prefer repository-provided scripts, wrappers, and configuration over introducing new tools.",
+    "Apply the smallest code change that satisfies the user request and the local conventions.",
+    "Run the relevant checks below when the toolchain is available.",
+    "Report commands run, important findings, unresolved risks, and skipped checks.",
+]
+
+
+DIAGNOSTIC_WORKFLOW = [
+    "Identify the runtime, JVM version, process or container context, and symptom before collecting data.",
+    "Prefer repository-provided runbooks, scripts, JVM flags, and observability output before introducing new tools.",
+    "Choose the lowest-impact official diagnostic command that can answer the question.",
+    "Preserve commands, timestamps, sample intervals, tool versions, and evidence needed for reproducible analysis.",
+    "Report findings, confidence level, operational risk, and follow-up data that would reduce uncertainty.",
+]
+
+
+def numbered_list(items: list[str]) -> str:
+    return "\n".join(f"{index}. {item}" for index, item in enumerate(items, start=1))
+
+
+def combined_sources(language_sources: list[tuple[str, str]], category_sources: list[tuple[str, str]]) -> list[tuple[str, str]]:
+    seen: set[str] = set()
+    combined: list[tuple[str, str]] = []
+    for name, url in [*language_sources, *category_sources]:
+        if url in seen:
+            continue
+        seen.add(url)
+        combined.append((name, url))
+    return combined
+
+
 def skill_md(language: str, category: str, tool: str) -> str:
     data = LANGUAGES[language]
     cat = CATEGORIES[category]
     skill_name = f"{language}-{category}"
+    category_sources = [
+        *cat.get("sources", []),
+        *cat.get("sources_by_language", {}).get(language, []),
+    ]
+    if cat.get("source_mode") == "category":
+        sources = combined_sources([], category_sources)
+    else:
+        sources = combined_sources(data["sources"], category_sources)
+    doc_kind = cat.get("doc_kind", "scanner")
+    use_context = cat.get(
+        "use_context",
+        f"writing, reviewing, linting, securing, or statically scanning {data['display']} code for",
+    )
     description = (
         f"{data['display']} {cat['summary']} based on official language, tool, "
-        f"and scanner documentation. Use when writing, reviewing, linting, securing, "
-        f"or statically scanning {data['display']} code for {tool}."
+        f"and {doc_kind} documentation. Use when {use_context} {tool}."
+    )
+    workflow = cat.get(
+        "workflow",
+        DIAGNOSTIC_WORKFLOW if doc_kind == "diagnostic" else QUALITY_WORKFLOW,
     )
 
     body = f"""---
@@ -599,15 +719,11 @@ Use for {data['display']} files and project metadata matching {data['globs']}.
 
 ## Official Sources
 
-{source_list(data['sources'])}
+{source_list(sources)}
 
 ## Workflow
 
-1. Detect the build tool, package manager, language version, and existing quality commands before changing code.
-2. Prefer repository-provided scripts, wrappers, and configuration over introducing new tools.
-3. Apply the smallest code change that satisfies the user request and the local conventions.
-4. Run the relevant checks below when the toolchain is available.
-5. Report commands run, important findings, unresolved risks, and skipped checks.
+{numbered_list(workflow)}
 
 ## Guidance
 
@@ -622,6 +738,8 @@ def generate() -> None:
             tool_dir = ROOT / language / tool
             tool_dir.mkdir(parents=True, exist_ok=True)
             for category in CATEGORIES:
+                if language not in CATEGORIES[category].get("languages", LANGUAGES.keys()):
+                    continue
                 skill_name = f"{language}-{category}"
                 skill_dir = tool_dir / skill_name
                 skill_dir.mkdir(parents=True, exist_ok=True)

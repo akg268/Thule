@@ -18,14 +18,19 @@ Tools:
 - Kiro
 - Cursor
 
-Each language/tool pair contains four Agent Skill packages:
+Every language/tool pair contains four core Agent Skill packages:
 
 - `<language>-best-practices`
 - `<language>-lint`
 - `<language>-security`
 - `<language>-static-scan`
 
-The skill content is intentionally grounded in official language, tool, and security-tool documentation. The skills do not install linters or scanners for a project; they tell the AI agent how to use the official or already-configured tools for that project.
+Java and Scala tool folders also include JVM diagnostic skills:
+
+- `<language>-thread-dump-analysis`
+- `<language>-jvm-memory-analysis`
+
+The skill content is intentionally grounded in official language, tool, security, and diagnostics documentation. The skills do not install linters, scanners, or JVM diagnostic tools for a project; they tell the AI agent how to use the official or already-configured tools for that project.
 
 ## Install
 
@@ -45,7 +50,7 @@ Direct:
 
 Useful flags:
 
-- `--list`: show supported tools and languages
+- `--list`: show supported tools, languages, and skill categories
 - `--dry-run`: show what would be copied
 - `--force`: replace an existing installed skill directory
 

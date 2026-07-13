@@ -5,7 +5,7 @@ ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 TOOLS=(claude codex kiro cursor)
 LANGS=(java scala go typescript python rust)
-CATEGORIES=(best-practices lint security static-scan)
+CATEGORIES=(best-practices lint security static-scan thread-dump-analysis jvm-memory-analysis)
 
 tool=""
 lang=""
