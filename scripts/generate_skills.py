@@ -352,19 +352,6 @@ The repository keeps the skill matrix generated from `scripts/generate_skills.py
 ```bash
 python3 scripts/generate_skills.py
 ```
-
-## GitHub Pages
-
-The project site lives in `docs/`.
-
-To publish it with GitHub Pages:
-
-1. Open the repository settings on GitHub.
-2. Go to Pages.
-3. Set the source to deploy from the main branch and `/docs` folder.
-4. Save the setting.
-
-The page includes a public-domain image of Qaanaaq, Greenland, credited to Col. Lee-Volker Cox, U.S. Air Force, via Wikimedia Commons.
 """
 
 
